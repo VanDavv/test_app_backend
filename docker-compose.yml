@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  db:
+    image: postgres
+
+  backend:
+    build: .
+    ports:
+      - 8765:8000
+    links:
+      - db
